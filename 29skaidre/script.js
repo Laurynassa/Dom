@@ -13,10 +13,12 @@ divas.setAttribute("class", "myClass");
 //3.b
 divas.setAttribute("id", "myId");
 //3.c not sure dėl šito
-const img = document.createElement("img");
-divas.appendChild(img);
-const a = document.createElement("a");
-divas.appendChild(a);
+divas.setAttribute("href", "https://www.google.lt/");
+divas.setAttribute(
+  "src",
+  "https://th.bing.com/th/id/OIP.rvSWtRd_oPRTwDoTCmkP5gHaE8?w=230&h=180&c=7&r=0&o=5&pid=1.7"
+);
+divas.setAttribute("alt", "paveiksliukas");
 
 //4.
 const divas2 = document.createElement("div");
@@ -96,10 +98,30 @@ isimti.addEventListener("click", (event) => {
   });
 });
 
-const click = document.querySelector(".clicker");
+// const click = document.querySelector(".clicker");
 
-let spaudimai = 0;
-click.addEventListener("click", () => {
-  spaudimai++;
-  click.innerText = `paspaudete ${spaudimai}`;
+// let spaudimai = 0;
+// click.addEventListener("click", () => {
+//   spaudimai++;
+//   click.innerText = `paspaudete ${spaudimai}`;
+// });
+
+const click = document.querySelector(".click");
+const click2 = document.querySelector(".click2");
+const counting = document.querySelector(".count");
+let countClicks = 0;
+click.addEventListener("click", (event) => {
+  event.preventDefault();
+  countClicks++;
+  console.log(countClicks);
+
+  counting.textContent = countClicks;
+});
+
+click2.addEventListener("click", (event) => {
+  event.preventDefault();
+  countClicks--;
+  console.log(countClicks);
+
+  counting.textContent = countClicks;
 });
